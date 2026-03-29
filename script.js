@@ -103,7 +103,6 @@ function addTodo() {
   }
 
   function deleteTodoitem(todoIndex) {
-    // Remove one item from the array and update storage + UI
     allTodos = allTodos.filter((_, i) => i !== todoIndex);
     updateTodoList();
     saveTodos();
