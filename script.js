@@ -10,10 +10,9 @@ function showSection(id) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // ======== Show "today" section on page load ========
   showSection('today');
 
-  // ======== Set today's date ========
+  // Puts current date
   const dateElement = document.getElementById('currentDate');
   if (dateElement) {
     const today = new Date();
@@ -24,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ======== TODAY TASKS SECTION ========
+  // TODAY TASKS SECTION
   const todoForm = document.querySelector('form');
   const todoInput = document.getElementById('todo-input');
   const todoListUL = document.getElementById('today-list');
 
   let allTodos = getTodos(); // Load from localStorage
-  updateTodoList(); // Render the list on load
+  updateTodoList(); 
 
-  // When we submit the form, we add a new todo
+  // When the form is submitted, add a new todo
   todoForm.addEventListener('submit', function (e) {
     e.preventDefault();
     addTodo();
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function addTodo() {
   const todoText = todoInput.value.trim();
   if (todoText.length > 0) {
-    const todayStr = new Date().toISOString().split('T')[0]; // "2025-08-01"
+    const todayStr = new Date().toISOString().split('T')[0]; 
     const todoObject = {
       text: todoText,
       completed: false,
@@ -53,7 +52,6 @@ function addTodo() {
     todoInput.value = "";
   }
 }
-
 
   function updateTodoList() {
     todoListUL.innerHTML = ""; 
@@ -80,14 +78,13 @@ function addTodo() {
         <i class="fa-solid fa-trash"></i>
       </button>
     `;
-
-    // When clicking delete, remove it from array and update list
+    //Deletes item from the list
     const deletebutton = todoLI.querySelector(".today-delete-button");
     deletebutton.addEventListener("click", () => {
       deleteTodoitem(todoIndex);
     });
 
-    // When checkbox changes, update completion status and save
+    // When checkbox changes, updates completion status and saves
     const checkbox = todoLI.querySelector("input[type='checkbox']");
     checkbox.addEventListener("change", () => {
       allTodos[todoIndex].completed = checkbox.checked;
@@ -163,7 +160,7 @@ importantForm.addEventListener('submit', function (e) {
 function addTaskToDOM(task) {
   const li = document.createElement('li');
   li.classList.add('important-task-item', 'important-li');
-  li.dataset.id = task.id;  // use data-id for identifying the task
+  li.dataset.id = task.id; 
 
   let content = `<div class="task-text"><strong>${task.text}</strong>`;
 
@@ -259,9 +256,14 @@ function createWorkoutBox(titleText, contentText) {
   workoutEntries.insertBefore(box, addWorkoutBtn);
 }
 
-/* ketu kam selektuar te gjitha DOM objects me klase entry box, me pas i kam kthyer ne nje array me objekte, dhe kam bredhur te gjith obj DOM
-me metoden map te arrayt, ku eshte marre gjithe contenti i box-it, eshte kthyer ne nje objekt tjt (me string) dhe eshte ruajtur ne local storage 
-si string */ 
+  /* 
+  Here, I selected all DOM elements with the class "entryBox". 
+  Then I converted them into an array of objects and used the array's map method 
+  to iterate through each DOM element. 
+  For each box, I extracted its content, converted it into a new object (as strings), 
+  and saved the array of objects to localStorage as a JSON string. 
+*/
+  
 function saveWorkouts() {
   const boxes = document.querySelectorAll(".entryBox");
   const data = Array.from(boxes).map(box => {
@@ -279,9 +281,8 @@ const groceriesInputBar = document.getElementById("grocery-input-bar");
 const groceryList = document.getElementById("grocerylist");
 const createGroceryInput = document.getElementById("grocery-list");
 
-// Load saved grocery list from localStorage or start with an empty array
-let groceryItems = getGroceryList(); // get from storage
-updateGroceryList(); // render on load
+let groceryItems = getGroceryList(); 
+updateGroceryList(); 
 
 groceriesInputBar.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -334,14 +335,12 @@ function updateGroceryList() {
       }
     });
 
-    // Toggle checkbox when text clicked
     const textSpan = li.querySelector(".create-text");
     textSpan.addEventListener("click", () => {
       checkbox.checked = !checkbox.checked;
       checkbox.dispatchEvent(new Event("change"));
     });
 
-    // Handle delete button click
     const deleteBtn = li.querySelector(".delete-button");
     deleteBtn.addEventListener("click", () => {
       const actualIndex = groceryItems.findIndex(
@@ -392,14 +391,14 @@ function getGroceryList() {
 
   const saved = localStorage.getItem("title");
   if (saved) {
-    h1.textContent = saved; // Restore saved title
+    h1.textContent = saved; 
   }
 
   const createListInput = document.getElementById("newlist-input");
   const createListUL = document.getElementById("newlist");
 
   let createList = getCreateList(); // Load saved lists
-  updateCreateList(); // Render lists
+  updateCreateList(); 
 
   // Save new list item
   document.getElementById("input-bar").addEventListener("submit", function (e) {
@@ -456,7 +455,7 @@ function getGroceryList() {
         deleteCreateListItem(index);
       });
 
-//ketu stilizohet detya pasi eshte mbaruer
+//the task is styled here after the user checks the checkbox
       if (item.completed) {
         textSpan.style.textDecoration = "line-through";
         textSpan.style.opacity = "0.6";
