@@ -1,4 +1,4 @@
-# Online To-Do App
+# Online To-Do App (my first project)
 
 This is a **frontend-focused To-Do web application** built using **HTML, CSS, and JavaScript**.  
 It allows users to manage tasks across multiple sections: Today, Important, Workouts, Groceries, and Create a List.
