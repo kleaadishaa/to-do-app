@@ -7,28 +7,28 @@ It allows users to manage tasks across multiple sections: Today, Important, Work
 
 # Features
 
-1) Today
+## 1) Today Section 
 - Add tasks that need to be completed today.
 - Mark tasks as completed or delete them.
 - Tasks are automatically saved in **localStorage**.
 - **Tasks reset automatically the next day** to start fresh.
 
-2) Important
+## 2) Important Section
 - Add tasks with an optional date and time.
 - Tasks are saved in localStorage and persist until manually deleted.
 - Notifications for upcoming deadlines are **not implemented** in this version.
 
-3) Workouts
+## 3) Workouts
 - Add workout entries with a title and content.
 - Edit entries directly in the interface.
 - Entries persist in localStorage and are **not date-limited**.
 
-4) Groceries
+## 4) Groceries
 - Add and manage grocery items.
 - Mark items as completed or delete them.
 - Persist in localStorage.
 
-5) Create a List
+## 5) Create a List
 - Create custom lists and add tasks to them.
 - Edit list titles and manage tasks.
 - Tasks persist in localStorage.
@@ -49,6 +49,8 @@ It allows users to manage tasks across multiple sections: Today, Important, Work
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/kleaadishaa/new-repo.git
+   git clone https://github.com/kleaadishaa/to-do-app.git
+
+   ```run by opening it on live server
 
    
