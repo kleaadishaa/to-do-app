@@ -1,0 +1,15 @@
+# VS Code settings
+.vscode/
+
+# Node modules (if JS project)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env files with secrets
+.env
