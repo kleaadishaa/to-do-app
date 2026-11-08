@@ -4,7 +4,6 @@ This is a **frontend-focused To-Do web application** built using **HTML, CSS, an
 It allows users to manage tasks across multiple sections: Today, Important, Workouts, Groceries, and Create a List.
 
 ---
-![cover](./Screenshot 2026-11-08 203030.png)
 
 # Features
 
